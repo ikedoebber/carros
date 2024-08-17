@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+/* Estilizando a tabela */
+table {
+    width: 30%;
+    border-collapse: collapse;
+    margin: 0 auto 20px;
+    border: 3px solid #fff;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 7px;
+    text-align: center;
+    border: 3px solid #fff;
+}
+
+th {
+    background-color: #000;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+td {
+    background-color: #000;
+    color: #ffd700;
+}
+
+/* Estilizando o botão */
+.button {
+    /* Estilos do botão */
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:   
+22px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Adicionando um pouco de espaçamento e margem para o formulário */
+form {
+margin: 20px;
+}
+</style>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Cadastrar" <button class="button"></button>
+    </form>
+
+{% endblock %}
